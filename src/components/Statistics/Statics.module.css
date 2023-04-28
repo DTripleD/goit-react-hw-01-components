@@ -1,0 +1,13 @@
+.listItem{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.statList{
+    display: flex;
+}
+
+.label, .percentage{
+    color: white;
+}
