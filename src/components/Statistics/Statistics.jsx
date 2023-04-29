@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {List, ListItem, ItemText} from './Statics.styled'
+import { List, ListItem, ItemLabel, StatisticsSection } from './Statics.styled';
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -9,19 +9,21 @@ function getRandomHexColor() {
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
+    <StatisticsSection>
       {title && <h2 className="title">{title}</h2>}
 
       <List>
         {stats.map(item => (
-          <ListItem key={item.id} style={{ backgroundColor: getRandomHexColor() }}
+          <ListItem
+            key={item.id}
+            style={{ backgroundColor: getRandomHexColor() }}
           >
-            <ItemText>{item.label}</ItemText>
-            <ItemText>{item.percentage}%</ItemText>
+            <ItemLabel>{item.label}</ItemLabel>
+            <span>{item.percentage}%</span>
           </ListItem>
         ))}
       </List>
-    </section>
+    </StatisticsSection>
   );
 };
 
